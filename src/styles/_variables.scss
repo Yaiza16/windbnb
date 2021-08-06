@@ -1,0 +1,21 @@
+// ****************
+// FONTS
+// ****************
+$f-primary: 'Montserrat', sans-serif;
+$f-secundary: 'Mulish', sans-serif;
+
+$f-base-size: 1rem;
+
+$f-bold: (
+    primary: (
+        light: 500,
+        medium: 600,
+        bold: 700
+    ),
+
+    secundary: (
+        light: 400,
+        medium: 700,
+        bold: 800
+    )
+);

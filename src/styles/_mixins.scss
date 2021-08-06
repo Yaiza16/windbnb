@@ -1,0 +1,19 @@
+@use 'variables' as v;
+
+
+
+@function f-bold($key, $bold){
+    @if $key{
+        $f-family: map-get(v.$f-bold, $key);
+        $f-weight: map-get($f-family, $bold);
+
+        @return $f-weight;
+        
+    } @else {
+        $f-family: map-get(v.$f-bold, primary);
+        $f-weight: map-get(v-$f-bold, $bold);
+
+        @return $f-weight;
+    }
+
+}
