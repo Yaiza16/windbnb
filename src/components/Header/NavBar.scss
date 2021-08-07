@@ -27,6 +27,10 @@
                 width: 33%;
                 align-items: flex-start;
 
+                &--button{
+                    width: auto;
+                }
+
             }
 
             .navbar-search{
@@ -44,12 +48,13 @@
                     text-transform: uppercase;
                     font-family: v.$f-secundary;
                     font-size: f.toRem(9);
-                    font-weight: f.f-bold('secundary', 'bold');
+                    font-weight: f.f-weight('secundary', 'bold');
 
                     &--button{
                         font-size: f.toRem(14);
-                        font-weight: f.f-bold('secundary', 'medium');
+                        font-weight: f.f-weight('secundary', 'light');
                         text-transform: unset;
+                        color: v.$c-veryLightGray;
                     }
                 }
 
@@ -70,7 +75,7 @@
                         align-items: center;
                         justify-content: center;
                         padding: 0 1rem;
-                        background-color: violet;
+                        background-color: v.$c-lightRed;
                         
                     }
                 }
@@ -99,7 +104,8 @@
     padding: 0 f.toRem(19);
     height: 100%;
     width: auto;
-    border: 1px solid v.$c-lightGray;
+    border: 1px solid v.$c-veryLightGray;
+
 
     &--city{
         border-radius: 1rem 0 0 1rem;
@@ -120,8 +126,14 @@
         outline: none;
         font-family: v.$f-secundary;
         font-size: f.toRem(14);
-        font-weight: f.f-bold('secundary', 'light');
+        font-weight: f.f-weight('secundary', 'light');
         outline: none;
+        color: v.$c-veryDark;
+
+        &::placeholder{
+            color: v.$c-lightGray;
+        }
+
         
 
         &--city{
