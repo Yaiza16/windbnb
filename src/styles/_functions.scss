@@ -8,16 +8,16 @@
 }
 
 
-@function f-bold($key, $bold){
-    @if $key{
-        $f-family: map-get(v.$f-bold, $key);
+@function f-weight($key, $bold){
+    @if ($key == 'primary'){
+        $f-family: map-get(v.$f-bold, primary);
         $f-weight: map-get($f-family, $bold);
 
         @return $f-weight;
         
     } @else {
-        $f-family: map-get(v.$f-bold, primary);
-        $f-weight: map-get(v-$f-bold, $bold);
+        $f-family: map-get(v.$f-bold, secundary);
+        $f-weight: map-get($f-family, $bold);
 
         @return $f-weight;
     }
