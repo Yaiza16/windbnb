@@ -1,0 +1,145 @@
+@use '../../styles/functions' as f;
+@use '../../styles/variables' as v;
+
+.navbar-container-wrapped{
+
+    &--open{
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: #4f4f4f40;
+
+
+        .navbar-container{
+            height: f.toRem(460);
+            padding: f.toRem(93);
+
+            background-color: white;
+            // align-items: center;
+            justify-content: center;
+            // align-content: stretch;
+            border-radius: unset;
+            box-shadow: unset;
+
+            .navbar-search-container{
+                width: 33%;
+                align-items: flex-start;
+
+            }
+
+            .navbar-search{
+                height: f.toRem(55);
+                width: 100%;
+                padding: f.toRem(12) f.toRem(19);
+
+                &--button{
+                    padding: 0;
+                    border: none;
+                }
+
+                &__title{
+                    display: block;
+                    text-transform: uppercase;
+                    font-family: v.$f-secundary;
+                    font-size: f.toRem(9);
+                    font-weight: f.f-bold('secundary', 'bold');
+
+                    &--button{
+                        font-size: f.toRem(14);
+                        font-weight: f.f-bold('secundary', 'medium');
+                        text-transform: unset;
+                    }
+                }
+
+                &__input{
+
+                    &--city{
+                        width: 100%;
+                    }
+
+                    &--guest{
+                        width: 100%;
+                    }
+
+                    &--button{
+                        display: flex;
+                        width: auto;
+                        gap: .2rem;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 0 1rem;
+                        background-color: violet;
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.navbar-container{
+    height: f.toRem(55);
+    display: flex;
+    box-shadow: .1rem .1rem .4rem rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+}
+
+.navbar-search-container{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+}
+
+.navbar-search{
+    padding: 0 f.toRem(19);
+    height: 100%;
+    width: auto;
+    border: 1px solid v.$c-lightGray;
+
+    &--city{
+        border-radius: 1rem 0 0 1rem;
+    }
+
+    &--button{
+        border-radius: 0 1rem 1rem 0;
+    }
+    
+    &__title{
+        display: none;
+    }
+
+    &__input{
+        border: none;
+        width: 100%;
+        height: 100%;
+        outline: none;
+        font-family: v.$f-secundary;
+        font-size: f.toRem(14);
+        font-weight: f.f-bold('secundary', 'light');
+        outline: none;
+        
+
+        &--city{
+            width: f.toRem(150);
+            border-radius: 1rem 0 0 1rem;
+        }
+        &--guest{
+            width: f.toRem(105);
+            border-left: none;
+            border-right: none;
+        }
+
+        &--button{
+            width: 100%;
+            background-color: white;
+            border-radius: 0 1rem 1rem 0;
+            // padding: 0 f.toRem(15);
+        }
+
+    }
+}

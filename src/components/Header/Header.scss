@@ -1,0 +1,8 @@
+@use '../../styles/functions' as f;
+
+.header{
+    padding: f.toRem(49) f.toRem(91);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
