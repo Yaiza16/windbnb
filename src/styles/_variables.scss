@@ -8,15 +8,15 @@ $f-base-size: 1rem;
 
 $f-bold: (
     primary: (
-        light: 500,
-        medium: 600,
-        bold: 700
+        'light': 500,
+        'medium': 600,
+        'bold': 700
     ),
 
     secundary: (
-        light: 400,
-        medium: 700,
-        bold: 800
+        'light': 400,
+        'medium': 700,
+        'bold': 800
     )
 );
 
@@ -24,4 +24,8 @@ $f-bold: (
 // ****************
 // COLORS
 // ****************
-$c-lightGray: #F2F2F2;
+$c-veryLightGray: #F2F2F2;
+$c-lightGray: #BDBDBD;
+$c-lightRed: #EB5757;
+$c-dark: #4F4F4F;
+$c-veryDark: #333333;
