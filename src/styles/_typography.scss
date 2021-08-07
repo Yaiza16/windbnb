@@ -1,4 +1,5 @@
 @use 'variables' as v;
+@use 'functions' as f;
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Mulish:ital,wght@0,400;0,800;1,700&display=swap');
 
 body{
@@ -7,7 +8,9 @@ body{
 }
 
 h1{
-    font-size: 24px;   
+    font-size: 24px;
+    font-weight: f.f-weight('primary', 'bold'); 
+    color: v.$c-veryDark;  
 }
 
 h2{
@@ -20,8 +23,11 @@ h3{
 
 h4{
     font-size: 16px;
+    color: v.$c-veryDark;
 }
 
 p{
     font-size: 14px;
+    font-weight: f.f-weight('primary', 'light'); 
+    color: v.$c-dark;
 }
