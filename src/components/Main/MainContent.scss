@@ -1,0 +1,14 @@
+@use '../../styles/variables' as v;
+@use '../../styles/functions' as f;
+
+
+.main-site{
+    margin-top: 1rem;
+    padding: 0 f.toRem(91);
+}
+
+.main-site-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
