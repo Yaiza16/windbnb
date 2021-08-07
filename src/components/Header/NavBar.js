@@ -1,16 +1,32 @@
-import React from 'react';
+import React, {useState, useRef} from 'react';
 import './NavBar.scss';
 import { IconContext } from "react-icons";
 import { BiSearchAlt2 } from "react-icons/bi";
 
 function NavBar() {
+   const [isNavbarFocus, setIsNavbarFocus] = useState(false);
+   const [text, setText] = useState('Helsinki, Finland');
+   const navbarRef = useRef()
+
+   const openNavbar = (e) =>{
+       console.log(e.target)
+       if (!isNavbarFocus){
+           setIsNavbarFocus(true)
+       } else{
+           if (navbarRef.current === e.target){
+            setIsNavbarFocus(false)
+           }
+       }
+   }
+
+
     return (
-        <div className="navbar-container-wrapped navbar-container-wrapped--open">
+        <div ref={navbarRef} className={isNavbarFocus ? "navbar-container-wrapped navbar-container-wrapped--open" : "navbar-container-wrapped"} onClick={(e) => openNavbar(e)}>
             <div className="navbar-container">
                 <div className="navbar-search-container">
                     <div className="navbar-search navbar-search--city">
                         <p className="navbar-search__title">Location</p>
-                        <input className="navbar-search__input navbar-search__input--city" type="text" value="Helsinki, Finland" />
+                        <input className="navbar-search__input navbar-search__input--city" type="text" value={text} onChange={(e) => setText(e.target.value)}/>
                     </div>
                 </div>
                 <div className="navbar-search-container">
