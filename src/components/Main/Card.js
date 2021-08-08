@@ -1,4 +1,5 @@
 import React from 'react'
+import IconStar from '../../helpers/Icons'
 import './Card.scss'
 
 function Card({stay}) {
@@ -11,7 +12,9 @@ function Card({stay}) {
                         {stay.superHost && <p className="card-info-host">Super host</p>}
                         <p className="card-info-type">{stay.type}{stay.beds && (`.  ${stay.beds} beds`)}</p>
                     </div>
-                    <p className="card-info-rating">{stay.rating}</p>
+                    <p className="card-info-rating">
+                        <IconStar />
+                          {stay.rating}</p>
                 </div>
                 <h3 className="card-info-title">{stay.title}</h3>
             </div>

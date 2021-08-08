@@ -37,6 +37,12 @@
     gap: f.toRem(11);
 }
 
+.card-info-rating{
+    display: flex;
+    align-items: center;
+    gap: f.toRem(5);
+}
+
 .card-info-title{
     margin-top: f.toRem(12);
 }
