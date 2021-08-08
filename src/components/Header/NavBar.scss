@@ -129,6 +129,7 @@
         font-weight: f.f-weight('secundary', 'light');
         outline: none;
         color: v.$c-veryDark;
+        cursor: pointer;
 
         &::placeholder{
             color: v.$c-lightGray;
