@@ -28,11 +28,22 @@
             .navbar-search-container{
                 width: 33%;
                 align-items: flex-start;
+                flex-direction: column;
+                gap: f.toRem(40);
+                justify-content: flex-start;
+
 
                 &--button{
                     width: auto;
                 }
 
+            }
+
+            .navbar-search-options{
+                display: flex;
+                flex-direction: column;
+                gap: f.toRem(33);
+                margin-left: 1rem;
             }
 
             .navbar-search{
@@ -98,6 +109,7 @@
                     }
                 }
             }
+
         }
     }
 }
@@ -171,4 +183,8 @@
         }
 
     }
+}
+
+.navbar-search-options{
+    display: none;
 }

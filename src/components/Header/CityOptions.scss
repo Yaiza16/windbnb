@@ -1,0 +1,15 @@
+@use '../../styles/functions' as f;
+@use '../../styles/variables' as v;
+
+.navbar-option-container{
+    display: flex;
+    align-items: center;
+    gap: f.toRem(10);
+    cursor: pointer;
+}
+
+
+.navbar-option-city{
+    font-family:  v.$f-secundary;
+    font-weight: f.f-weight('secundary', 'light');
+}

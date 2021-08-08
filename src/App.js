@@ -49,7 +49,7 @@ function App() {
 
   return (
     <div className={isNavbarFocus ? "app app--opened" : "app"}>
-      <Header isNavbarFocus={isNavbarFocus} setIsNavbarFocus={setIsNavbarFocus}/>
+      <Header isNavbarFocus={isNavbarFocus} setIsNavbarFocus={setIsNavbarFocus} stays={stays}/>
       <MainContent stays={stays} loading={loading}/>
     </div>
   );
