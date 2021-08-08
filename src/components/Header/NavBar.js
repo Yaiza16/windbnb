@@ -13,7 +13,6 @@ function NavBar({isNavbarFocus, setIsNavbarFocus, stays, cityOptions, text, upda
        console.log(e.target)
        if (!isNavbarFocus){
             setIsNavbarFocus(true)
-            setIsCitySearchFocus(true)
             citySearchRef.current.focus()
        } else{
            if (navbarRef.current === e.target){
@@ -23,6 +22,7 @@ function NavBar({isNavbarFocus, setIsNavbarFocus, stays, cityOptions, text, upda
            }
        }
    }
+
 
    const handleCitySearchFocus = () => {
     setIsCitySearchFocus(true)
@@ -40,7 +40,7 @@ function NavBar({isNavbarFocus, setIsNavbarFocus, stays, cityOptions, text, upda
                 <div className="navbar-search-container">
                     <div className={isCitySearchFocus ? "navbar-search navbar-search--focus navbar-search--city" : "navbar-search navbar-search--city"}>
                         <p className="navbar-search__title">Location</p>
-                        <input ref={citySearchRef} className="navbar-search__input navbar-search__input--city" type="text" readonly="readonly" value={`${text.city}, ${text.country}`} onClick={() => handleCitySearchFocus()}/>
+                        <input ref={citySearchRef} className="navbar-search__input navbar-search__input--city" type="text" readOnly value={`${text.city}, ${text.country}`} onClick={() => handleCitySearchFocus()}/>
                     </div>
                     <div className="navbar-search-options">
                         <CityOptions cityOptions={cityOptions} updateCityValue={updateCityValue}/>
@@ -49,7 +49,7 @@ function NavBar({isNavbarFocus, setIsNavbarFocus, stays, cityOptions, text, upda
                 <div className="navbar-search-container"> 
                     <div className={isGuestSearchFocus ? "navbar-search navbar-search--focus" : "navbar-search"}>
                         <p className="navbar-search__title">Guest</p>
-                        <input className="navbar-search__input navbar-search__input--guest" type="text" readonly="readonly" placeholder="Add guest" value={adultsCounter + childrenCounter > 0 ? (adultsCounter + childrenCounter > 1 ? `${adultsCounter + childrenCounter} guests` : `${adultsCounter + childrenCounter} guest`) : ""} onClick={() => handleGuestSearchFocus()}/>
+                        <input className="navbar-search__input navbar-search__input--guest" type="text" readOnly placeholder="Add guest" value={adultsCounter + childrenCounter > 0 ? (adultsCounter + childrenCounter > 1 ? `${adultsCounter + childrenCounter} guests` : `${adultsCounter + childrenCounter} guest`) : ""} onClick={() => handleGuestSearchFocus()}/>
                     </div>
                     <div className="navbar-search-options">
                         <GuestOptions adultsCounter={adultsCounter} setAdultsCounter={setAdultsCounter} childrenCounter={childrenCounter} setChildrenCounter={setChildrenCounter}/>

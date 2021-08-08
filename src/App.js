@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useCallback} from 'react'
 import Header from './components/Header/Header';
 import './App.scss';
 import MainContent from './components/Main/MainContent';
@@ -62,14 +62,23 @@ function App() {
   const [adultsCounter, setAdultsCounter] = useState(0)
   const [childrenCounter, setChildrenCounter] = useState(0)
 
-  useEffect(() =>{
+  const handleInitialValues = useCallback(() => {
     getAllStays(setLoading)
-            .then((data) => {
-              setStays(data)
-              updateCityOptions(data)
-            })
-
+          .then((data) => {
+          setStays(data)
+          updateCityOptions(data)
+    })
   }, [])
+
+  useEffect(() =>{
+    // getAllStays(setLoading)
+    //         .then((data) => {
+    //           setStays(data)
+    //           updateCityOptions(data)
+    //         })
+    handleInitialValues()
+
+  }, [handleInitialValues])
 
 
   const updateCityOptions = newStays =>{
@@ -81,7 +90,6 @@ function App() {
 
     let unique = []
     allCities.map(x => unique.filter(a => a.city === x.city && a.country === x.country).length > 0 ? null : unique.push(x));
-    console.log(unique)
     setCityOptions(unique)
   }
 
@@ -105,7 +113,7 @@ function App() {
 
   return (
     <div className={isNavbarFocus ? "app app--opened" : "app"}>
-      <Header isNavbarFocus={isNavbarFocus} setIsNavbarFocus={setIsNavbarFocus} stays={stays} cityOptions={cityOptions} text={text} updateCityValue={updateCityValue} adultsCounter={adultsCounter} setAdultsCounter={setAdultsCounter} childrenCounter={childrenCounter} setChildrenCounter={setChildrenCounter} setIsCitySearchFocus={setIsCitySearchFocus} isCitySearchFocus={isCitySearchFocus} setIsGuestSearchFocus={setIsGuestSearchFocus} isGuestSearchFocus={isGuestSearchFocus} updateFilteredStays={updateFilteredStays}/>
+      <Header isNavbarFocus={isNavbarFocus} setIsNavbarFocus={setIsNavbarFocus} stays={stays} cityOptions={cityOptions} text={text} updateCityValue={updateCityValue} adultsCounter={adultsCounter} setAdultsCounter={setAdultsCounter} childrenCounter={childrenCounter} setChildrenCounter={setChildrenCounter} setIsCitySearchFocus={setIsCitySearchFocus} isCitySearchFocus={isCitySearchFocus} setIsGuestSearchFocus={setIsGuestSearchFocus} isGuestSearchFocus={isGuestSearchFocus} updateFilteredStays={updateFilteredStays} handleInitialValues={handleInitialValues}/>
       <MainContent stays={stays} loading={loading} />
     </div>
   );
