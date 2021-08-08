@@ -3,15 +3,14 @@ import './NavBar.scss';
 import { IconContext } from "react-icons";
 import { BiSearchAlt2 } from "react-icons/bi";
 
-function NavBar() {
-   const [isNavbarFocus, setIsNavbarFocus] = useState(false);
+function NavBar({isNavbarFocus, setIsNavbarFocus}) {
    const [text, setText] = useState('Helsinki, Finland');
    const navbarRef = useRef()
 
    const openNavbar = (e) =>{
        console.log(e.target)
        if (!isNavbarFocus){
-           setIsNavbarFocus(true)
+            setIsNavbarFocus(true)
        } else{
            if (navbarRef.current === e.target){
             setIsNavbarFocus(false)

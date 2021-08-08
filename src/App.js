@@ -34,6 +34,8 @@ const initialStays = [
 
 function App() {
   const [stays, setStays] = useState(initialStays) 
+  const [isNavbarFocus, setIsNavbarFocus] = useState(false);
+  
 
   useEffect(() =>{
     getAllStays()
@@ -43,9 +45,10 @@ function App() {
 
   }, [])
 
+
   return (
-    <div className="app">
-      <Header />
+    <div className={isNavbarFocus ? "app app--opened" : "app"}>
+      <Header isNavbarFocus={isNavbarFocus} setIsNavbarFocus={setIsNavbarFocus}/>
       <MainContent stays={stays}/>
     </div>
   );

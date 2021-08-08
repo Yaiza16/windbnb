@@ -3,11 +3,11 @@ import './Header.scss';
 import Logo from './Logo'
 import NavBar from './NavBar'
 
-function Header() {
+function Header({isNavbarFocus, setIsNavbarFocus}) {
     return (
         <header className="header">
             <Logo />
-            <NavBar />
+            <NavBar isNavbarFocus={isNavbarFocus} setIsNavbarFocus={setIsNavbarFocus}/>
         </header>
     )
 }
