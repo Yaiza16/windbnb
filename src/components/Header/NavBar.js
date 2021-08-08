@@ -27,7 +27,7 @@ function NavBar({isNavbarFocus, setIsNavbarFocus, stays, cityOptions, text, upda
                 <div className="navbar-search-container">
                     <div className="navbar-search navbar-search--city">
                         <p className="navbar-search__title">Location</p>
-                        <input ref={citySearchRef} className="navbar-search__input navbar-search__input--city" type="text" value={`${text.city}, ${text.country}`}/>
+                        <input ref={citySearchRef} className="navbar-search__input navbar-search__input--city" type="text" readonly="readonly" value={`${text.city}, ${text.country}`}/>
                     </div>
                     <div className="navbar-search-options">
                         <CityOptions cityOptions={cityOptions} updateCityValue={updateCityValue}/>
