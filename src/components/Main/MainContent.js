@@ -1,8 +1,9 @@
 import React from 'react'
 import Card from './Card'
+import Loading from './Loading'
 import './MainContent.scss'
 
-function MainContent({stays}) {
+function MainContent({stays, loading}) {
     
 
     return (
@@ -13,9 +14,11 @@ function MainContent({stays}) {
             </div>
             <div className="main-site-body">
                 <div className="cards-container">
-                {stays.map(stay => (
-                    <Card key={stay.id} stay={stay}/>
-                ))}
+                {loading 
+                        ? <Loading /> 
+                        : (stays.map(stay => (
+                            <Card key={stay.id} stay={stay}/>
+                        )))}
                 </div>
             </div>
         </div>
