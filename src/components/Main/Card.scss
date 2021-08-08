@@ -1,0 +1,42 @@
+@use '../../styles/variables' as v;
+@use '../../styles/functions' as f;
+
+
+.card{
+    width: f.toRem(395);
+}
+
+.card-photo{
+    width: 100%;
+    height: f.toRem(269);
+    border-radius: f.toRem(24);
+}
+
+.card-info{
+    margin-top: 1rem;
+}
+
+.card-info-host{
+    text-transform: uppercase;
+    padding: f.toRem(7) f.toRem(10);
+    color: v.$c-dark;
+    border-radius: f.toRem(12);
+    border: 1px solid v.$c-dark;
+    font-weight: f.f-weight('secundary', 'medium');
+}
+
+.card-info-data{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-info-desc{
+    display: flex;
+    align-items: center;
+    gap: f.toRem(11);
+}
+
+.card-info-title{
+    margin-top: f.toRem(12);
+}
