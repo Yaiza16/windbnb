@@ -1,5 +1,5 @@
 import React from 'react'
-import IconStar from '../../helpers/Icons'
+import {IconStar} from '../../helpers/Icons'
 import './Card.scss'
 
 function Card({stay}) {
@@ -13,7 +13,7 @@ function Card({stay}) {
                         <p className="card-info-type">{stay.type}{stay.beds && (`.  ${stay.beds} beds`)}</p>
                     </div>
                     <p className="card-info-rating">
-                        <IconStar />
+                            <IconStar />
                           {stay.rating}</p>
                 </div>
                 <h3 className="card-info-title">{stay.title}</h3>

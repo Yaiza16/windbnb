@@ -1,7 +1,6 @@
 import React, {useState, useRef} from 'react';
 import './NavBar.scss';
-import { IconContext } from "react-icons";
-import { BiSearchAlt2 } from "react-icons/bi";
+import { IconSearchRed, IconSearchWhite } from '../../helpers/Icons';
 
 function NavBar({isNavbarFocus, setIsNavbarFocus}) {
    const [text, setText] = useState('Helsinki, Finland');
@@ -38,12 +37,8 @@ function NavBar({isNavbarFocus, setIsNavbarFocus}) {
                     <div className="navbar-search navbar-search--button">
                     <button className="navbar-search__input navbar-search__input--button">
                         {isNavbarFocus
-                                    ? (<IconContext.Provider value={{size: "19px", color: "#F2F2F2"}}>
-                                    <BiSearchAlt2 />
-                                </IconContext.Provider>)
-                                    : (<IconContext.Provider value={{size: "19px", color: "#EB5757"}}>
-                                    <BiSearchAlt2 />
-                                </IconContext.Provider>)}
+                                    ? (<IconSearchWhite />)
+                                    : (<IconSearchRed />)}
                         <p className="navbar-search__title navbar-search__title--button">Search</p>
                     </button>
                     </div>
