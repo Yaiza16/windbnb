@@ -1,4 +1,9 @@
 @use 'variables' as v;
 
+@mixin mq($key){
+    $size: map-get(v.$media-query, $key);
 
-
+    @media only screen and (min-width: $size){
+        @content;
+    }
+}

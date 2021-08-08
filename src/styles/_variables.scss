@@ -31,3 +31,13 @@ $c-darkRed: #ff385c;
 $c-darkGray: #828282;
 $c-dark: #4F4F4F;
 $c-veryDark: #333333;
+
+// ****************
+// BREAKPOINTS
+// ****************
+
+$media-query: (
+    'lg': 987px,
+    'md': 900px,
+    'sm': 750px
+)
