@@ -1,0 +1,8 @@
+@use '../../styles/functions' as f;
+
+
+.logo-container{
+    min-height: f.toRem(55);
+    display: flex;
+    align-items: center;
+}
