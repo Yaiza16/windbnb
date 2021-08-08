@@ -32,24 +32,66 @@ const initialStays = [
   }
 ];
 
+const initialCityOptions = [
+  {
+    "city": "Helsinki",
+    "country": "Finland"
+  },
+  {
+    "city": "Turku",
+    "country": "Finland"
+  }
+]
+
+const initialText ={
+  "city": "Helsinki",
+  "country": "Finland"
+}
+
 function App() {
   const [stays, setStays] = useState(initialStays) 
   const [isNavbarFocus, setIsNavbarFocus] = useState(false);
   const [loading, setLoading] = useState(true)
+  const [text, setText] = useState(initialText);
+
   
+  const [cityOptions, setCityOptions] = useState(initialCityOptions)
 
   useEffect(() =>{
     getAllStays(setLoading)
             .then((data) => {
               setStays(data)
+              updateCityOptions(data)
             })
 
   }, [])
 
 
+  const updateCityOptions = newStays =>{
+    let allCities = newStays.map(stay =>({
+      "city": stay.city,
+      "country": stay.country
+      }
+    ))
+
+    let unique = []
+    allCities.map(x => unique.filter(a => a.city === x.city && a.country === x.country).length > 0 ? null : unique.push(x));
+    console.log(unique)
+    setCityOptions(unique)
+  }
+
+  const updateCityValue = city =>{
+    const newCity = {
+      "city": city.city,
+      "country": city.country
+    }
+
+    setText(newCity)
+  }
+
   return (
     <div className={isNavbarFocus ? "app app--opened" : "app"}>
-      <Header isNavbarFocus={isNavbarFocus} setIsNavbarFocus={setIsNavbarFocus} stays={stays}/>
+      <Header isNavbarFocus={isNavbarFocus} setIsNavbarFocus={setIsNavbarFocus} stays={stays} cityOptions={cityOptions} text={text} updateCityValue={updateCityValue}/>
       <MainContent stays={stays} loading={loading}/>
     </div>
   );

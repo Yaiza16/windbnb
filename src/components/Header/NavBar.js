@@ -1,10 +1,10 @@
-import React, {useState, useRef} from 'react';
+import React, { useRef} from 'react';
 import './NavBar.scss';
 import { IconSearchRed, IconSearchWhite } from '../../helpers/Icons';
 import CityOptions from './CityOptions';
 
-function NavBar({isNavbarFocus, setIsNavbarFocus, stays}) {
-   const [text, setText] = useState('Helsinki, Finland');
+function NavBar({isNavbarFocus, setIsNavbarFocus, stays, cityOptions, text, updateCityValue}) {
+//    const [text, setText] = useState('Helsinki, Finland');
    const navbarRef = useRef()
    const citySearchRef = useRef()
 
@@ -27,10 +27,10 @@ function NavBar({isNavbarFocus, setIsNavbarFocus, stays}) {
                 <div className="navbar-search-container">
                     <div className="navbar-search navbar-search--city">
                         <p className="navbar-search__title">Location</p>
-                        <input ref={citySearchRef} className="navbar-search__input navbar-search__input--city" type="text" value={text} onChange={(e) => setText(e.target.value)}/>
+                        <input ref={citySearchRef} className="navbar-search__input navbar-search__input--city" type="text" value={`${text.city}, ${text.country}`}/>
                     </div>
                     <div className="navbar-search-options">
-                        <CityOptions stays={stays}/>
+                        <CityOptions cityOptions={cityOptions} updateCityValue={updateCityValue}/>
                     </div>
                 </div>
                 <div className="navbar-search-container">

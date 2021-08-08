@@ -2,22 +2,17 @@ import React from 'react'
 import { IconLocation } from '../../helpers/Icons'
 import './CityOptions.scss'
 
-function CityOptions({stays}) {
-    const allCities = stays.map(stay =>(
-        `${stay.city}, ${stay.country}`
-    ))
+function CityOptions({cityOptions, updateCityValue}) {
+    
 
-    const allCitiesArr = new Set(allCities)
-    const result = [...allCitiesArr]
-
-    console.log(result)
+    console.log(cityOptions)
     return (
         <>
             {
-                result.map(city =>(
-                    <div className="navbar-option-container">
+                cityOptions.map(city =>(
+                    <div key={city.city} className="navbar-option-container" onClick={() => updateCityValue(city)}>
                         <IconLocation />
-                        <p className="navbar-option-city">{city}</p>
+                        <p className="navbar-option-city">{city.city}, {city.country}</p>
 
                     </div>
                 ))
