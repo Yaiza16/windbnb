@@ -1,8 +1,20 @@
 @use '../../styles/functions' as f;
+@use '../../styles/mixins' as m;
 
 .header{
     padding: f.toRem(49) f.toRem(91);
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include m.mq('lg'){
+        flex-direction: column;
+        align-items: flex-start;
+        gap: f.toRem(39);
+    }
+
+    @include m.mq('md'){
+        padding: f.toRem(22) f.toRem(35);
+        justify-content: center;
+    }
 }

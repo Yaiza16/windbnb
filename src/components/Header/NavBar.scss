@@ -1,5 +1,7 @@
 @use '../../styles/functions' as f;
 @use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
 
 .navbar-container-wrapped{
 
@@ -26,6 +28,15 @@
             border-radius: unset;
             box-shadow: unset;
 
+            @include m.mq('md'){
+                flex-direction: column;
+                padding: f.toRem(49) f.toRem(21);
+                justify-content: flex-start;
+                gap: 1.5rem;
+                height: f.toRem(632);
+
+            }
+
             .navbar-search-container{
                 width: 33%;
                 align-items: flex-start;
@@ -33,9 +44,15 @@
                 gap: f.toRem(40);
                 justify-content: flex-start;
 
+                @include m.mq('md'){
+                    width: 100%;
+                    height: auto;
+                }
+
 
                 &--button{
                     width: auto;
+                    margin-top: auto;
                 }
 
             }
@@ -74,7 +91,13 @@
                 &--button{
                     padding: 0;
                     border: none;
-                    transition: background-color .3s ease-in;
+
+                    @include m.mq('md'){
+                        justify-self: self-end;
+                        justify-content: center;
+                        display: flex;
+                        
+                    }
                 }
 
                 &__title{
@@ -151,6 +174,15 @@
 
     &--city{
         border-radius: 1rem 0 0 1rem;
+        @include m.mq('md'){
+            width: f.toRem(138);
+        }
+    }
+
+    &--guest{
+        @include m.mq('md'){
+            width: f.toRem(105);
+        }
     }
 
     &--button{
