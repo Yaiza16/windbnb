@@ -55,6 +55,8 @@ function App() {
   const [text, setText] = useState(initialText);
 
   const [cityOptions, setCityOptions] = useState(initialCityOptions)
+  const [isCitySearchFocus, setIsCitySearchFocus] = useState(false)
+  const [isGuestSearchFocus, setIsGuestSearchFocus] = useState(false)
 
   const [adultsCounter, setAdultsCounter] = useState(0)
   const [childrenCounter, setChildrenCounter] = useState(0)
@@ -93,7 +95,7 @@ function App() {
 
   return (
     <div className={isNavbarFocus ? "app app--opened" : "app"}>
-      <Header isNavbarFocus={isNavbarFocus} setIsNavbarFocus={setIsNavbarFocus} stays={stays} cityOptions={cityOptions} text={text} updateCityValue={updateCityValue} adultsCounter={adultsCounter} setAdultsCounter={setAdultsCounter} childrenCounter={childrenCounter} setChildrenCounter={setChildrenCounter}/>
+      <Header isNavbarFocus={isNavbarFocus} setIsNavbarFocus={setIsNavbarFocus} stays={stays} cityOptions={cityOptions} text={text} updateCityValue={updateCityValue} adultsCounter={adultsCounter} setAdultsCounter={setAdultsCounter} childrenCounter={childrenCounter} setChildrenCounter={setChildrenCounter} setIsCitySearchFocus={setIsCitySearchFocus} isCitySearchFocus={isCitySearchFocus} setIsGuestSearchFocus={setIsGuestSearchFocus} isGuestSearchFocus={isGuestSearchFocus}/>
       <MainContent stays={stays} loading={loading}/>
     </div>
   );

@@ -3,11 +3,11 @@ import './Header.scss';
 import Logo from './Logo'
 import NavBar from './NavBar'
 
-function Header({isNavbarFocus, setIsNavbarFocus, stays, cityOptions, text, updateCityValue, adultsCounter, setAdultsCounter, childrenCounter, setChildrenCounter}) {
+function Header({isNavbarFocus, setIsNavbarFocus, stays, cityOptions, text, updateCityValue, adultsCounter, setAdultsCounter, childrenCounter, setChildrenCounter, setIsCitySearchFocus, isCitySearchFocus, setIsGuestSearchFocus, isGuestSearchFocus}) {
     return (
         <header className="header">
             <Logo />
-            <NavBar isNavbarFocus={isNavbarFocus} setIsNavbarFocus={setIsNavbarFocus} stays={stays} cityOptions={cityOptions} text={text} updateCityValue={updateCityValue} adultsCounter={adultsCounter} setAdultsCounter={setAdultsCounter} childrenCounter={childrenCounter} setChildrenCounter={setChildrenCounter}/>
+            <NavBar isNavbarFocus={isNavbarFocus} setIsNavbarFocus={setIsNavbarFocus} stays={stays} cityOptions={cityOptions} text={text} updateCityValue={updateCityValue} adultsCounter={adultsCounter} setAdultsCounter={setAdultsCounter} childrenCounter={childrenCounter} setChildrenCounter={setChildrenCounter} setIsCitySearchFocus={setIsCitySearchFocus} isCitySearchFocus={isCitySearchFocus} setIsGuestSearchFocus={setIsGuestSearchFocus} isGuestSearchFocus={isGuestSearchFocus}/>
         </header>
     )
 }

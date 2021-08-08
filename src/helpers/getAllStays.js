@@ -1,5 +1,3 @@
-
-
 const getAllStays = async (setLoading) =>{
     setLoading(true)
 
