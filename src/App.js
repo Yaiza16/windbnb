@@ -54,8 +54,10 @@ function App() {
   const [loading, setLoading] = useState(true)
   const [text, setText] = useState(initialText);
 
-  
   const [cityOptions, setCityOptions] = useState(initialCityOptions)
+
+  const [adultsCounter, setAdultsCounter] = useState(0)
+  const [childrenCounter, setChildrenCounter] = useState(0)
 
   useEffect(() =>{
     getAllStays(setLoading)
@@ -91,7 +93,7 @@ function App() {
 
   return (
     <div className={isNavbarFocus ? "app app--opened" : "app"}>
-      <Header isNavbarFocus={isNavbarFocus} setIsNavbarFocus={setIsNavbarFocus} stays={stays} cityOptions={cityOptions} text={text} updateCityValue={updateCityValue}/>
+      <Header isNavbarFocus={isNavbarFocus} setIsNavbarFocus={setIsNavbarFocus} stays={stays} cityOptions={cityOptions} text={text} updateCityValue={updateCityValue} adultsCounter={adultsCounter} setAdultsCounter={setAdultsCounter} childrenCounter={childrenCounter} setChildrenCounter={setChildrenCounter}/>
       <MainContent stays={stays} loading={loading}/>
     </div>
   );

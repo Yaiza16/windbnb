@@ -1,0 +1,30 @@
+@use '../../styles/functions' as f;
+@use '../../styles/variables' as v;
+
+.guest-title{
+    font-family: v.$f-secundary;
+    font-weight: f.f-weight('secundary', 'medium');
+}
+
+.guest-desc{
+    font-family: v.$f-secundary;
+    font-weight: f.f-weight('secundary', 'light');
+    color: v.$c-lightGray;
+}
+
+.counter-container{
+    margin-top: f.toRem(12);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.button-item{
+    width: 23px;
+    height: 23px;
+    color: v.$c-darkGray;
+    border: 1px solid v.$c-darkGray;
+    background-color: transparent;
+    outline: none;
+    border-radius: f.toRem(4);
+}
