@@ -3,6 +3,7 @@ import Header from './components/Header/Header';
 import './App.scss';
 import MainContent from './components/Main/MainContent';
 import getAllStays from './helpers/getAllStays';
+import getFilteredStays from './helpers/getFilteredStays';
 
 
 const initialStays = [
@@ -93,10 +94,19 @@ function App() {
     setText(newCity)
   }
 
+  const updateFilteredStays = () =>{
+    getFilteredStays(setLoading, text, adultsCounter, childrenCounter)
+                .then(data =>{
+                  setStays(data)
+                  setIsNavbarFocus(false)
+                })
+    
+  }
+
   return (
     <div className={isNavbarFocus ? "app app--opened" : "app"}>
-      <Header isNavbarFocus={isNavbarFocus} setIsNavbarFocus={setIsNavbarFocus} stays={stays} cityOptions={cityOptions} text={text} updateCityValue={updateCityValue} adultsCounter={adultsCounter} setAdultsCounter={setAdultsCounter} childrenCounter={childrenCounter} setChildrenCounter={setChildrenCounter} setIsCitySearchFocus={setIsCitySearchFocus} isCitySearchFocus={isCitySearchFocus} setIsGuestSearchFocus={setIsGuestSearchFocus} isGuestSearchFocus={isGuestSearchFocus}/>
-      <MainContent stays={stays} loading={loading}/>
+      <Header isNavbarFocus={isNavbarFocus} setIsNavbarFocus={setIsNavbarFocus} stays={stays} cityOptions={cityOptions} text={text} updateCityValue={updateCityValue} adultsCounter={adultsCounter} setAdultsCounter={setAdultsCounter} childrenCounter={childrenCounter} setChildrenCounter={setChildrenCounter} setIsCitySearchFocus={setIsCitySearchFocus} isCitySearchFocus={isCitySearchFocus} setIsGuestSearchFocus={setIsGuestSearchFocus} isGuestSearchFocus={isGuestSearchFocus} updateFilteredStays={updateFilteredStays}/>
+      <MainContent stays={stays} loading={loading} />
     </div>
   );
 }

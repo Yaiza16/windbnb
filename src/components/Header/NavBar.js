@@ -4,7 +4,7 @@ import { IconSearchRed, IconSearchWhite } from '../../helpers/Icons';
 import CityOptions from './CityOptions';
 import GuestOptions from './GuestOptions';
 
-function NavBar({isNavbarFocus, setIsNavbarFocus, stays, cityOptions, text, updateCityValue, adultsCounter, setAdultsCounter, childrenCounter, setChildrenCounter, setIsCitySearchFocus, isCitySearchFocus, setIsGuestSearchFocus, isGuestSearchFocus}) {
+function NavBar({isNavbarFocus, setIsNavbarFocus, stays, cityOptions, text, updateCityValue, adultsCounter, setAdultsCounter, childrenCounter, setChildrenCounter, setIsCitySearchFocus, isCitySearchFocus, setIsGuestSearchFocus, isGuestSearchFocus, updateFilteredStays}) {
 //    const [text, setText] = useState('Helsinki, Finland');
    const navbarRef = useRef()
    const citySearchRef = useRef()
