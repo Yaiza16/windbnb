@@ -5,11 +5,13 @@ import { IconSearchRed, IconSearchWhite } from '../../helpers/Icons';
 function NavBar({isNavbarFocus, setIsNavbarFocus}) {
    const [text, setText] = useState('Helsinki, Finland');
    const navbarRef = useRef()
+   const citySearchRef = useRef()
 
    const openNavbar = (e) =>{
        console.log(e.target)
        if (!isNavbarFocus){
             setIsNavbarFocus(true)
+            citySearchRef.current.focus()
        } else{
            if (navbarRef.current === e.target){
             setIsNavbarFocus(false)
@@ -24,7 +26,7 @@ function NavBar({isNavbarFocus, setIsNavbarFocus}) {
                 <div className="navbar-search-container">
                     <div className="navbar-search navbar-search--city">
                         <p className="navbar-search__title">Location</p>
-                        <input className="navbar-search__input navbar-search__input--city" type="text" value={text} onChange={(e) => setText(e.target.value)}/>
+                        <input ref={citySearchRef} className="navbar-search__input navbar-search__input--city" type="text" value={text} onChange={(e) => setText(e.target.value)}/>
                     </div>
                 </div>
                 <div className="navbar-search-container">
