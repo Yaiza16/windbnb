@@ -4,13 +4,26 @@
 
 .card{
     width: f.toRem(395);
+    cursor: pointer;
+}
+
+.photo-container{
+    width: 100%;
+    height: f.toRem(269);
+    overflow: hidden;
+    border-radius: f.toRem(24);
+
 }
 
 .card-photo{
     width: 100%;
-    height: f.toRem(269);
-    border-radius: f.toRem(24);
     object-fit: cover;
+    position: relative;
+    transition: transform .3s ease;
+
+    &:hover{
+        transform: scale(1.1);
+    }
 }
 
 .card-info{

@@ -5,7 +5,9 @@ import './Card.scss'
 function Card({stay}) {
     return (
         <div className="card">
-            <a href="!#" className="card-photo-link"><img className="card-photo" src={stay.photo} alt="stay" /></a>
+            <div className="photo-container">
+                <a href="!#" className="card-photo-link"><img className="card-photo" src={stay.photo} alt="stay" /></a>
+            </div>
             <div className="card-info">
                 <div className="card-info-data">
                     <div className="card-info-desc">
