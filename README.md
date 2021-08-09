@@ -5,9 +5,9 @@ Solution for a challenge from <a  href="http://devchallenges.io"  target="_blank
 
 <div  align="center">
 <h3>
-<a  href="">Demo</a>
+<a  href="https://windbnb-yv.netlify.app/">Demo</a>
 <span> | </span>
-<a  href="">Solution</a>
+<a  href="https://devchallenges.io/solutions/VJmFnaO3pVeypHQ1Atly">Solution</a>
 <span> | </span>
 <a  href="https://devchallenges.io/challenges/3JFYedSOZqAxYuOCNmYD">Challenge</a>
 </h3>
