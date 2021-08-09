@@ -9,7 +9,6 @@ function NavBar({isNavbarFocus, setIsNavbarFocus, stays, cityOptions, text, upda
    const citySearchRef = useRef()
 
    const openNavbar = (e) =>{
-       console.log(e.target)
        if (!isNavbarFocus){
             setIsNavbarFocus(true)
             citySearchRef.current.focus()

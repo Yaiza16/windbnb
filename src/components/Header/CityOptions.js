@@ -3,9 +3,6 @@ import { IconLocation } from '../../helpers/Icons'
 import './CityOptions.scss'
 
 function CityOptions({cityOptions, updateCityValue}) {
-    
-
-    console.log(cityOptions)
     return (
         <>
             {
