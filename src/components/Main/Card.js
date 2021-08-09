@@ -3,22 +3,24 @@ import {IconStar} from '../../helpers/Icons'
 import './Card.scss'
 
 function Card({stay}) {
+    const {photo, superHost, type, beds, rating, title} = stay;
+
     return (
         <div className="card">
             <div className="photo-container">
-                <a href="!#" className="card-photo-link"><img className="card-photo" src={stay.photo} alt="stay" /></a>
+                <a href="!#" className="card-photo-link"><img className="card-photo" src={photo} alt="stay" /></a>
             </div>
             <div className="card-info">
                 <div className="card-info-data">
                     <div className="card-info-desc">
-                        {stay.superHost && <p className="card-info-host">Super host</p>}
-                        <p className="card-info-type">{stay.type}{stay.beds && (`.  ${stay.beds} beds`)}</p>
+                        {superHost && <p className="card-info-host">Super host</p>}
+                        <p className="card-info-type">{type}{beds && (`.  ${beds} beds`)}</p>
                     </div>
                     <p className="card-info-rating">
                             <IconStar />
-                          {stay.rating}</p>
+                          {rating}</p>
                 </div>
-                <h3 className="card-info-title">{stay.title}</h3>
+                <h3 className="card-info-title">{title}</h3>
             </div>
             
         </div>
