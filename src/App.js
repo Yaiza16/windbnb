@@ -52,7 +52,7 @@ const initialText ={
 function App() {
   const [stays, setStays] = useState(initialStays) 
   const [isNavbarFocus, setIsNavbarFocus] = useState(false);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [text, setText] = useState(initialText);
 
   const [cityOptions, setCityOptions] = useState(initialCityOptions)
@@ -71,11 +71,6 @@ function App() {
   }, [])
 
   useEffect(() =>{
-    // getAllStays(setLoading)
-    //         .then((data) => {
-    //           setStays(data)
-    //           updateCityOptions(data)
-    //         })
     handleInitialValues()
 
   }, [handleInitialValues])
