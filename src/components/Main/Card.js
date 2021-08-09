@@ -8,7 +8,7 @@ function Card({stay}) {
     return (
         <div className="card">
             <div className="photo-container">
-                <a href="!#" role="button" className="card-photo-link"><img aria-hidden="true" className="card-photo" src={photo} alt="stay" /></a>
+                <a href="!#" className="card-photo-link"><img className="card-photo" src={photo} alt="stay" /></a>
             </div>
             <div className="card-info">
                 <div className="card-info-data">
