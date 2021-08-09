@@ -4,7 +4,7 @@ import './CloseOption.scss'
 
 function CloseOption({isNavbarFocus, setIsNavbarFocus}) {
     return (
-        <div className="icon-close-container" onClick={() => setIsNavbarFocus(false)}>
+        <div aria-label="close" className="icon-close-container" onClick={() => setIsNavbarFocus(false)}>
             {isNavbarFocus && <IconClose />}
         </div>
     )

@@ -21,7 +21,6 @@ function NavBar({isNavbarFocus, setIsNavbarFocus, stays, cityOptions, text, upda
        }
    }
 
-
    const handleCitySearchFocus = () => {
     setIsCitySearchFocus(true)
     setIsGuestSearchFocus(false)
@@ -35,7 +34,7 @@ function NavBar({isNavbarFocus, setIsNavbarFocus, stays, cityOptions, text, upda
     return (
         <div ref={navbarRef} className={isNavbarFocus ? "navbar-container-wrapped navbar-container-wrapped--open" : "navbar-container-wrapped"} onClick={(e) => openNavbar(e)}>
             <div className="navbar-container">
-                <div className="navbar-search-container">
+                <div role="button" className="navbar-search-container">
                     <div className={isCitySearchFocus ? "navbar-search navbar-search--focus navbar-search--city" : "navbar-search navbar-search--city"}>
                         <p className="navbar-search__title">Location</p>
                         <input ref={citySearchRef} className="navbar-search__input navbar-search__input--city" type="text" readOnly value={`${text.city}, ${text.country}`} onClick={() => handleCitySearchFocus()}/>
@@ -44,7 +43,7 @@ function NavBar({isNavbarFocus, setIsNavbarFocus, stays, cityOptions, text, upda
                         <CityOptions cityOptions={cityOptions} updateCityValue={updateCityValue}/>
                     </div>
                 </div>
-                <div className="navbar-search-container"> 
+                <div role="button" className="navbar-search-container"> 
                     <div className={isGuestSearchFocus ? "navbar-search navbar-search--guest navbar-search--focus" : "navbar-search navbar-search--guest"}>
                         <p className="navbar-search__title">Guest</p>
                         <input className="navbar-search__input navbar-search__input--guest" type="text" readOnly placeholder="Add guest" value={adultsCounter + childrenCounter > 0 ? (adultsCounter + childrenCounter > 1 ? `${adultsCounter + childrenCounter} guests` : `${adultsCounter + childrenCounter} guest`) : ""} onClick={() => handleGuestSearchFocus()}/>
@@ -53,7 +52,7 @@ function NavBar({isNavbarFocus, setIsNavbarFocus, stays, cityOptions, text, upda
                         <GuestOptions adultsCounter={adultsCounter} setAdultsCounter={setAdultsCounter} childrenCounter={childrenCounter} setChildrenCounter={setChildrenCounter}/>
                     </div>
                 </div>
-                <div className="navbar-search-container navbar-search-container--button">
+                <div role="button" className="navbar-search-container navbar-search-container--button">
                     <div className="navbar-search navbar-search--button">
                     <button className="navbar-search__input navbar-search__input--button" onClick={() => updateFilteredStays()}>
                         {isNavbarFocus

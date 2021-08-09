@@ -3,7 +3,7 @@ import './Logo.scss';
 
 function Logo({handleInitialValues}) {
     return (
-        <a href="#!" className="logo-container" onClick={() => handleInitialValues()}>
+        <a aria-label="homepage" href="#!" className="logo-container" onClick={() => handleInitialValues()}>
             <img src="assets/images/logo.svg" alt="site-logo" />
         </a>
     )

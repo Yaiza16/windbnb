@@ -7,7 +7,7 @@ function CityOptions({cityOptions, updateCityValue}) {
         <>
             {
                 cityOptions.map(city =>(
-                    <div key={city.city} className="navbar-option-container" onClick={() => updateCityValue(city)}>
+                    <div role="option" key={city.city} className="navbar-option-container" onClick={() => updateCityValue(city)}>
                         <IconLocation />
                         <p className="navbar-option-city">{city.city}, {city.country}</p>
 
