@@ -8,7 +8,7 @@ function Card({stay}) {
     return (
         <div className="card">
             <div className="photo-container">
-                <a href="!#" className="card-photo-link"><img aria-hidden="true" className="card-photo" src={photo} alt="stay" /></a>
+                <a href="!#" role="button" className="card-photo-link"><img aria-hidden="true" className="card-photo" src={photo} alt="stay" /></a>
             </div>
             <div className="card-info">
                 <div className="card-info-data">
@@ -22,7 +22,6 @@ function Card({stay}) {
                 </div>
                 <h3 className="card-info-title">{title}</h3>
             </div>
-            
         </div>
     )
 }

@@ -67,6 +67,9 @@ function App() {
           .then((data) => {
           setStays(data)
           updateCityOptions(data)
+          setText(initialText)
+          setAdultsCounter(0)
+          setChildrenCounter(0)
     })
   }, [])
 
