@@ -1,6 +1,7 @@
 import React from 'react'
 import { IconContext } from "react-icons";
 import { AiFillStar } from "react-icons/ai";
+import { AiOutlineClose } from "react-icons/ai";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { MdLocationOn } from "react-icons/md";
 
@@ -37,6 +38,14 @@ export const IconLocation = () =>{
     return(
         <IconContext.Provider value={{size: "19px", color: "#4F4F4F"}}>
                     <MdLocationOn />
+        </IconContext.Provider>
+    )
+}
+
+export const IconClose = () =>{
+    return(
+        <IconContext.Provider value={{size: "21px", color: "#4F4F4F"}}>
+                    <AiOutlineClose />
         </IconContext.Provider>
     )
 }
