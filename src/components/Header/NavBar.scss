@@ -21,9 +21,7 @@
             padding: f.toRem(93);
 
             background-color: white;
-            // align-items: center;
             justify-content: center;
-            // align-content: stretch;
             gap: .5rem;
             border-radius: unset;
             box-shadow: unset;
@@ -57,13 +55,6 @@
 
             }
 
-            // .navbar-search-options{
-            //     display: flex;
-            //     flex-direction: column;
-            //     gap: f.toRem(33);
-            //     margin-left: 1rem;
-            // }
-
             .navbar-search{
                 height: f.toRem(55);
                 width: 100%;
@@ -83,10 +74,7 @@
                         margin-left: 1rem;
                     }
                 }
-                // &:focus-within{
-                //     // transform: scaleX(1.05);
-                //     // transform-origin: left;
-                // }
+
 
                 &--button{
                     padding: 0;
