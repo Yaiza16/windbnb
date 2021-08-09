@@ -8,6 +8,7 @@
 }
 
 
+// Get bold depending on font-family
 @function f-weight($key, $bold){
     @if ($key == 'primary'){
         $f-family: map-get(v.$f-bold, primary);
