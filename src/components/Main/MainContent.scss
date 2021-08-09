@@ -5,10 +5,10 @@
 
 .main-site{
     margin-top: 1rem;
-    padding: 0 f.toRem(91);
+    padding: 0 f.toRem(91) 1rem;
 
     @include m.mq('md'){
-        padding: f.toRem(0) f.toRem(12);
+        padding: f.toRem(0) f.toRem(12) 1rem;
     }
 }
 
